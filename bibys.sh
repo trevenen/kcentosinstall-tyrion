@@ -5,4 +5,7 @@ name=nginx repo
 baseurl=http://nginx.org/packages/centos/$releasever/$basearch/
 gpgcheck=0
 enabled=1
-yum -y install git rsync wget nginx mysql mysql-server php php-common php-fpm php-mysql vim 
+#yum -y install git rsync wget nginx mysql mysql-server php php-common php-fpm php-mysql vim 
+yum -y install git rsync wget vim 
+yum -y update
+

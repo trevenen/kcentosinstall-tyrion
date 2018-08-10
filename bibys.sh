@@ -96,8 +96,22 @@ systemctl start ntpd
 #gpgcheck=0
 #enabled=1
 #yum -y install git rsync wget nginx mysql mysql-server php php-common php-fpm php-mysql vim 
-yum -y install git rsync wget vim 
+yum -y install git rsync wget vim screen
 yum -y update
+
+# Do you want python3?
+yum -y groupinstall development
+yum -y install yum-utils
+yum -y install https://centos7.iuscommunity.org/ius-release.rpm
+yum -y install python36u
+python3.6 -V
+yum -y install python36u-pip
+yum -y install python36u-devel
+mkdir enviroments ; cd enviroments
+python3.6 -m venv my_env
+source my_env/bin/activate
+pip install --upgrade pip
+
 
 echo All finished! Rebooting...
 (sleep 5; reboot) &
